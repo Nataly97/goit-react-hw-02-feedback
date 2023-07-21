@@ -31,7 +31,7 @@ class FeedbackOptions extends Component {
     };
   }
   onLeaveFeedback (){
-     const {good, neutral, bad} = this.state;
+    //  const {good, neutral, bad} = this.state;
       }
   render() {
     const { options, onLeaveFeedback } = this.props;    
