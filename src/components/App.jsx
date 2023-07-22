@@ -12,8 +12,9 @@ export const App = () => {
   return (
     <>
       <Section title="Please leave feedback">
-        <FeedbackOptions options={state} onLeaveFeedback={()=> console.log("test")}/>
-        <Statistics good={0} neutral={0} bad={0} />
+        {/* <FeedbackOptions options={state} onLeaveFeedback={()=> console.log("test")}/> */}
+        <FeedbackOptions options={state} onLeaveFeedback/>
+        <Statistics good={10} neutral={state.Neutral} bad={state.Bad} />
       </Section>
     </>
   );

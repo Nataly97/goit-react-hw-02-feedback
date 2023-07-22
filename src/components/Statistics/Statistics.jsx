@@ -13,19 +13,17 @@ class Statistics extends Component {
     neutral: PropTypes.number,
     bad: PropTypes.number,
   };
-
   constructor(props) {
     super(props);
     this.state = {
-      state: {
-        good: this.props.Good,
-        neutral: this.props.Neutral,
-        bad: this.props.Bad,
-      },
+      good: this.props.good,
+      neutral: this.props.neutral,
+      bad: this.props.bad,
     };
   }
 
   render() {
+    // const {good, neutral, bad} = this.props
     const { good, neutral, bad } = this.state;
     return (
       <div>
