@@ -1,13 +1,13 @@
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Statistics from 'components/Statistics/Statistics';
 
 class FeedbackOptions extends Component {
   static defaultProps = {
     Good: 0,
     Neutral: 0,
     Bad: 0,
-    onLeaveFeedback: () =>{}
+    onLeaveFeedback: () => {},
   };
 
   static propTypes = {
@@ -26,7 +26,6 @@ class FeedbackOptions extends Component {
   }
   onLeaveFeedback(element) {
     const { good, neutral, bad } = this.state;
-    // console.log(this.state)
     if (element === 'Good') {
       this.setState({ good: good + 1 });
     } else if (element === 'Neutral') {
@@ -36,18 +35,16 @@ class FeedbackOptions extends Component {
     }
   }
   render() {
-    const { options, onLeaveFeedback } = this.props;
+    const { options } = this.props;
     const { good, neutral, bad } = this.state;
     return (
       <div>
         {Object.keys(options).map(element => (
           <button key={element} onClick={() => this.onLeaveFeedback(element)}>
-            {element} 
+            {element}
           </button>
         ))}
-        <h1>{good}</h1>
-        <h1>{neutral}</h1>
-        <h1>{bad}</h1>
+        <Statistics good={good} neutral={neutral} bad={bad} />
       </div>
     );
   }
