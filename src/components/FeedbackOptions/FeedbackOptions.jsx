@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Statistics from 'components/Statistics/Statistics';
+import { Button } from './FeedbackOptionsStyle';
 
 class FeedbackOptions extends Component {
   static defaultProps = {
@@ -70,9 +71,9 @@ class FeedbackOptions extends Component {
     return (
       <div>
         {Object.keys(options).map(element => (
-          <button key={element} onClick={() => this.onLeaveFeedback(element)}>
+          <Button key={element} onClick={() => this.onLeaveFeedback(element)}>
             {element}
-          </button>
+          </Button>
         ))}
         <Statistics
           good={good}

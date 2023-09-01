@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Title } from './NotificationStyle';
 
 class Notification extends Component {
   static defaultProps = {
@@ -13,7 +14,7 @@ class Notification extends Component {
     const { message } = this.props;
     return (
       <div>
-        <h1>Statistics</h1>
+        <Title>Statistics</Title>
         <p>{message}</p>
       </div>
     );

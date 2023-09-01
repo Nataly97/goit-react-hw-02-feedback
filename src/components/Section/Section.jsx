@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Container, Title } from './SectionStyle';
 
 class Section extends Component {
   static defaultProps = {
@@ -12,10 +13,10 @@ class Section extends Component {
   render() {
     const { title, children } = this.props;
     return (
-      <div>
-        <h2>{title}</h2>
+      <Container>
+        <Title>{title}</Title>
         {children}
-      </div>
+      </Container>
     );
   }
 }

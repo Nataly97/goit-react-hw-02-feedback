@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Notification from 'components/Notification/Notification';
+import { Title } from './StatisticsStyle';
 
 class Statistics extends Component {
   static defaultProps = {
@@ -24,7 +25,7 @@ class Statistics extends Component {
     if (total === 0) return <Notification message={'There is no feedback'} />;
     return (
       <div>
-        <h1>Statistics</h1>
+        <Title>Statistics</Title>
         <p>
           Good: <span>{good}</span>
         </p>
