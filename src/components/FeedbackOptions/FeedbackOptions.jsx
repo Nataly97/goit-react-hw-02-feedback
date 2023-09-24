@@ -15,31 +15,26 @@ class FeedbackOptions extends Component {
     bad: 0,
   };
 
-  onLeaveFeedback(element) {
+  onLeaveFeedback = element => {
     this.setState({ [element]: this.state[element] + 1 });
-  }
+  };
 
-  countTotalFeedback() {
+  countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
-  }
+  };
 
-  countPositiveFeedbackPercentage() {
+  countPositiveFeedbackPercentage = () => {
     const { good } = this.state;
     const total = this.countTotalFeedback();
     return total === 0 ? 0 : Math.round((good * 100) / total);
-  }
+  };
   render() {
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
     return (
       <div>
-        {/* {Object.keys(this.state).map(element => (
-          <Button key={element} onClick={() => this.onLeaveFeedback(element)}>
-            {element}
-          </Button>
-        ))} */}
         <FeedbackButton List={this.state} onClick={this.onLeaveFeedback} />
         <Statistics
           good={good}
